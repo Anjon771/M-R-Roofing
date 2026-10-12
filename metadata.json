@@ -1,0 +1,6 @@
+{
+  "name": "Skyline Roofing - Premium Architectural Roofing & Restoration",
+  "description": "High-performance residential and commercial roofing, interactive cost calculator, before-and-after restoration showcase, and instant inspection booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

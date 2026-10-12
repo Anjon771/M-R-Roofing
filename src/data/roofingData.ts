@@ -1,4 +1,5 @@
 import { MaterialOption, ProjectItem, ReviewItem } from '../types/roofing';
+import { IMAGES } from '../assets/images';
 
 export const ROOFING_MATERIALS: MaterialOption[] = [
   {
@@ -67,7 +68,7 @@ export const GALLERY_PROJECTS: ProjectItem[] = [
     sqFt: 3400,
     duration: '2 Days',
     material: 'GAF Timberline HDZ Charcoal',
-    image: '/src/assets/images/hero_roofing_craft_1791816503559.jpg',
+    image: IMAGES.hero,
     description: 'Full tear-off of double-layer failing 3-tab shingles, replacement of 4 rotten decking sheets, installation of WeatherWatch ice/water barrier and copper drip edges.',
     highlights: ['Golden Pledge 50-Yr Warranty', 'Seamless Copper Flashing', '130 MPH LayerLock System']
   },
@@ -79,7 +80,7 @@ export const GALLERY_PROJECTS: ProjectItem[] = [
     sqFt: 16500,
     duration: '5 Days',
     material: 'Standing Seam Metal & TPO Membrane',
-    image: '/src/assets/images/commercial_metal_roof_1791816542456.jpg',
+    image: IMAGES.commercialRoof,
     description: 'Commercial dual-plane design integrating standing seam dark bronze metal canopy with an energy-reflective 60-mil white TPO roof membrane.',
     highlights: ['30-Year NDL Manufacturer Warranty', 'Internal Scupper Drainage', 'Solar-Ready Anchor Fasteners']
   },
@@ -91,7 +92,7 @@ export const GALLERY_PROJECTS: ProjectItem[] = [
     sqFt: 2850,
     duration: '1.5 Days',
     material: 'Architectural Shingles (Pewter Gray)',
-    image: '/src/assets/images/roof_after_restored_1791816530532.jpg',
+    image: IMAGES.roofAfter,
     description: 'Comprehensive emergency restoration following golf ball-sized hail storm. M-R Roofing handled direct insurance adjuster coordination and approved 100% replacement.',
     highlights: ['Zero Out-of-Pocket Insurance Claim', 'Cobra Ridge Ventilation Added', 'Class 4 Impact Resistance']
   },
@@ -103,7 +104,7 @@ export const GALLERY_PROJECTS: ProjectItem[] = [
     sqFt: 4200,
     duration: '3 Days',
     material: '24-Gauge Matte Charcoal Standing Seam',
-    image: '/src/assets/images/hero_roofing_craft_1791816503559.jpg',
+    image: IMAGES.hero,
     description: 'Converted dated cedar shake roof to fire-resistant modern standing seam metal with concealed clips and snow-guard retention brackets.',
     highlights: ['Class A Fire Resistance', '70% Solar Reflectance', '50-Year Non-Fading Finish']
   }

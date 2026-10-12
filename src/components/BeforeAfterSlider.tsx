@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { ArrowLeftRight, CheckCircle2, AlertTriangle, ShieldCheck } from 'lucide-react';
+import { IMAGES, FALLBACK_IMAGES } from '../assets/images';
 
 export const BeforeAfterSlider: React.FC = () => {
   const [sliderPos, setSliderPos] = useState<number>(50);
@@ -56,7 +57,13 @@ export const BeforeAfterSlider: React.FC = () => {
             >
               {/* "After" Image (Full background) */}
               <img
-                src="/src/assets/images/roof_after_restored_1791816530532.jpg"
+                src={IMAGES.roofAfter}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== FALLBACK_IMAGES.roofAfter) {
+                    target.src = FALLBACK_IMAGES.roofAfter;
+                  }
+                }}
                 alt="Restored pristine architectural shingle roof with precision ridge cap"
                 className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
                 referrerPolicy="no-referrer"
@@ -68,7 +75,13 @@ export const BeforeAfterSlider: React.FC = () => {
                 style={{ width: `${sliderPos}%` }}
               >
                 <img
-                  src="/src/assets/images/roof_before_weathered_1791816517319.jpg"
+                  src={IMAGES.roofBefore}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== FALLBACK_IMAGES.roofBefore) {
+                      target.src = FALLBACK_IMAGES.roofBefore;
+                    }
+                  }}
                   alt="Weathered failing roof before restoration with moss, rusted valley, and damaged shingles"
                   className="absolute inset-0 w-full h-full object-cover object-center max-w-none"
                   style={{ width: containerRef.current ? `${containerRef.current.clientWidth}px` : '100%' }}

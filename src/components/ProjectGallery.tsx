@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GALLERY_PROJECTS } from '../data/roofingData';
 import { ProjectItem } from '../types/roofing';
+import { FALLBACK_IMAGES } from '../assets/images';
 import { MapPin, Clock, Layers, ArrowUpRight, Check, X } from 'lucide-react';
 
 export const ProjectGallery: React.FC = () => {
@@ -66,6 +67,12 @@ export const ProjectGallery: React.FC = () => {
                 <div className="relative aspect-video overflow-hidden bg-slate-900">
                   <img
                     src={project.image}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (target.src !== FALLBACK_IMAGES.hero) {
+                        target.src = FALLBACK_IMAGES.hero;
+                      }
+                    }}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     referrerPolicy="no-referrer"
@@ -152,6 +159,12 @@ export const ProjectGallery: React.FC = () => {
               <div className="aspect-video rounded-xl overflow-hidden mb-6 bg-slate-900">
                 <img
                   src={selectedProject.image}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== FALLBACK_IMAGES.hero) {
+                      target.src = FALLBACK_IMAGES.hero;
+                    }
+                  }}
                   alt={selectedProject.title}
                   className="w-full h-full object-cover"
                 />

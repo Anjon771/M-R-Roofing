@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Calculator, ShieldCheck, Award, Clock, Star } from 'lucide-react';
+import { IMAGES, FALLBACK_IMAGES } from '../assets/images';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -11,7 +12,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
       {/* Background Hero Image with measured contrast scrim */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/hero_roofing_craft_1791816503559.jpg"
+          src={IMAGES.hero}
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (target.src !== FALLBACK_IMAGES.hero) {
+              target.src = FALLBACK_IMAGES.hero;
+            }
+          }}
           alt="Craftsman residential property with precision architectural shingle roof"
           className="w-full h-full object-cover object-center brightness-75 scale-105 transition-transform duration-1000 ease-out"
           referrerPolicy="no-referrer"
